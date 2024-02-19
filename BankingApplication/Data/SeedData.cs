@@ -68,7 +68,6 @@ public static class SeedData
 
             // commit to DB 
             context.SaveChanges();
-
         }
     
     }
@@ -151,7 +150,7 @@ public static class SeedData
             },
             new Customer
             {
-                CustomerID = 2000,
+                CustomerID = 2200,
                 Name = "Guest",
                 Address = "23 Random Street",
                 City = "Melbourne",
@@ -161,9 +160,9 @@ public static class SeedData
                 {
                     new Account
                     {
-                        AccountNumber = 4000,
+                        AccountNumber = 4200,
                         AccountType = "S",
-                        CustomerID = 2000,
+                        CustomerID = 2200,
                         Transactions = new List<Transaction>
                         {
                             new Transaction
@@ -176,9 +175,9 @@ public static class SeedData
                     },
                     new Account
                     {
-                        AccountNumber = 4100,
+                        AccountNumber = 4201,
                         AccountType = "C",
-                        CustomerID = 2000,
+                        CustomerID = 2200,
                         Transactions = new List<Transaction>
                         {
                             new Transaction
@@ -201,8 +200,8 @@ public static class SeedData
                 },
                 Login = new Login
                 {
-                    LoginID = "00000000",
-                    CustomerID = 2000,
+                    LoginID = "01234567",
+                    CustomerID = 2200,
                     PasswordHash = "Rfc2898DeriveBytes$50000$MrW2CQoJvjPMlynGLkGFrg==$x8iV0TiDbEXndl0Fg8V3Rw91j5f5nztWK1zu7eQa0EE="
                 }
             }
