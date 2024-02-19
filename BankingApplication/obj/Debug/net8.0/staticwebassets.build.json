@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QAU2Npq37hkXtEkpe+naJ5g8UBSf+ibzXUaE3X8oaDs=",
+  "Hash": "DJkWzw6O3wqSjrvlLXlcunTgDHJ9WARI5cG8cuw6QM0=",
   "Source": "BankingApplication",
   "BasePath": "_content/BankingApplication",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/derektek/Documents/PersonalProjects/banking-application/BankingApplication/wwwroot/img/MCBA.jpeg",
+      "SourceId": "BankingApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/derektek/Documents/PersonalProjects/banking-application/BankingApplication/wwwroot/",
+      "BasePath": "_content/BankingApplication",
+      "RelativePath": "img/MCBA.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/MCBA.jpeg"
     },
     {
       "Identity": "/Users/derektek/Documents/PersonalProjects/banking-application/BankingApplication/wwwroot/js/site.js",
