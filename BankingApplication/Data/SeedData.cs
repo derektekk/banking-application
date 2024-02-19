@@ -27,7 +27,7 @@ public static class SeedData
                     Postcode = customer.Postcode,
                     Islocked = false
                 }
-            ); ;
+            );
             // insert accounts in DB
             foreach (var account in customer.Accounts)
             {
@@ -39,13 +39,13 @@ public static class SeedData
                         CustomerID = account.CustomerID,
                         Balance = getInitialBalance(account)
                     }
-                ); ;
+                );
                 // insert transactions into DB
                 foreach (var transaction in account.Transactions)
                 {
 
                     context.Transactions.Add(
-                        new Models.Transaction
+                        new Transaction
                         {   
                             TransactionType = "D",
                             AccountNumber = account.AccountNumber,
