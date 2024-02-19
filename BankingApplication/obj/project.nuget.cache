@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RkWWQw34x8qy+cLrQt9PIK2kaPOHNeNfCD9yVPKKq9ZPg7Cf2II2gVVK2dsXJ/CqhAOJWRqWuzNq9wf9S8/MxQ==",
+  "dgSpecHash": "2opxWZ1p54f0b9D6QwrupqsRuM9DDw8MLSY4SUPfAc2AHxMoFjOelkT3nlkPoBh4ezGOAGOsjgWfe4006SiOYQ==",
   "success": true,
   "projectFilePath": "/Users/derektek/Documents/PersonalProjects/banking-application/BankingApplication/BankingApplication.csproj",
   "expectedPackageFiles": [
@@ -45,6 +45,7 @@
     "/Users/derektek/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "/Users/derektek/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/derektek/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/Users/derektek/.nuget/packages/simplehashing.net/2.1.0/simplehashing.net.2.1.0.nupkg.sha512",
     "/Users/derektek/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/Users/derektek/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/Users/derektek/.nuget/packages/system.composition/6.0.0/system.composition.6.0.0.nupkg.sha512",

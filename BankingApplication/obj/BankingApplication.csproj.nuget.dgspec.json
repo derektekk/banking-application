@@ -47,6 +47,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "SimpleHashing.Net": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             }
           },
           "imports": [

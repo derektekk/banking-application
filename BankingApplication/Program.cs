@@ -1,14 +1,28 @@
 using BankingApplication.Data;
 using Microsoft.EntityFrameworkCore;
+using BankingApplication.Wrapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ISessionWrapper, SessionWrapper>();
+
+
+
 // Add DbContext
 builder.Services.AddDbContext<BankingApplicationContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BankingApplicationContext")));
+
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options => 
+{
+    options.Cookie.Name = "CustomerCookie";
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -41,6 +55,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
