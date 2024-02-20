@@ -26,7 +26,6 @@ public class LoginController : Controller
     {
         // get customer from loginID
         var login = _context.Logins.Include(x => x.Customer).FirstOrDefault(y => y.LoginID == loginID);
-        var customer = _context.Customers.Find(login.CustomerID);
 
         // Check if the login details are valid
         if(login == null || string.IsNullOrEmpty(password) || !s_simpleHash.Verify(password, login.PasswordHash))
@@ -35,6 +34,8 @@ public class LoginController : Controller
             ModelState.AddModelError("LoginFailed", "Login failed, please try again.");
             return View(new Login { LoginID = loginID });
         }
+
+        var customer = _context.Customers.Find(login.CustomerID);
 
         // Check if the account is locked
         if(customer.Islocked)
