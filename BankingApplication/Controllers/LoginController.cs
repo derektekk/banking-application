@@ -35,6 +35,7 @@ public class LoginController : Controller
             return View(new Login { LoginID = loginID });
         }
 
+        // Get customer if login details are valid
         var customer = _context.Customers.Find(login.CustomerID);
 
         // Check if the account is locked
