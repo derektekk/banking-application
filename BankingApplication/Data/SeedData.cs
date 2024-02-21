@@ -23,6 +23,8 @@ public static class SeedData
                     CustomerID = customer.CustomerID,
                     FirstName = customer.FirstName,
                     LastName = customer.LastName,
+                    LoginID = customer.LoginID,
+                    PasswordHash = customer.PasswordHash
                     // Address = customer.Address,
                     // City = customer.City,
                     // Postcode = customer.Postcode,
@@ -57,14 +59,14 @@ public static class SeedData
                 }
             }
             // insert login into DB
-            context.Logins.Add(
-                new Login
-                {
-                    LoginID = customer.Login.LoginID,
-                    CustomerID = customer.CustomerID,
-                    PasswordHash = customer.Login.PasswordHash
-                }
-            );
+            // context.Logins.Add(
+            //     new Login
+            //     {
+            //         LoginID = customer.Login.LoginID,
+            //         CustomerID = customer.CustomerID,
+            //         PasswordHash = customer.Login.PasswordHash
+            //     }
+            // );
 
             // commit to DB 
             context.SaveChanges();
@@ -96,6 +98,8 @@ public static class SeedData
                 CustomerID = 2100,
                 FirstName = "Derek",
                 LastName = "Tek",
+                LoginID = "12345678",
+                PasswordHash = "Rfc2898DeriveBytes$50000$MrW2CQoJvjPMlynGLkGFrg==$x8iV0TiDbEXndl0Fg8V3Rw91j5f5nztWK1zu7eQa0EE=",
                 // Address = "123 Fake Street",
                 // City = "Melbourne",
                 // Postcode = "3000",
@@ -140,19 +144,22 @@ public static class SeedData
                         }
 
                     }
-                },
-                Login = new Login
-                {
-                    LoginID = "12345678",
-                    CustomerID = 2100,
-                    PasswordHash = "Rfc2898DeriveBytes$50000$MrW2CQoJvjPMlynGLkGFrg==$x8iV0TiDbEXndl0Fg8V3Rw91j5f5nztWK1zu7eQa0EE="
                 }
+                ,
+                // Login = new Login
+                // {
+                //     LoginID = "12345678",
+                //     CustomerID = 2100,
+                //     PasswordHash = "Rfc2898DeriveBytes$50000$MrW2CQoJvjPMlynGLkGFrg==$x8iV0TiDbEXndl0Fg8V3Rw91j5f5nztWK1zu7eQa0EE="
+                // }
             },
             new Customer
             {
                 CustomerID = 2200,
                 FirstName = "Guest",
                 LastName = "User",
+                LoginID = "01234567",
+                PasswordHash = "Rfc2898DeriveBytes$50000$MrW2CQoJvjPMlynGLkGFrg==$x8iV0TiDbEXndl0Fg8V3Rw91j5f5nztWK1zu7eQa0EE=",
                 // Address = "23 Random Street",
                 // City = "Melbourne",
                 // Postcode = "3000",
@@ -197,13 +204,14 @@ public static class SeedData
                         }
 
                     }
-                },
-                Login = new Login
-                {
-                    LoginID = "01234567",
-                    CustomerID = 2200,
-                    PasswordHash = "Rfc2898DeriveBytes$50000$MrW2CQoJvjPMlynGLkGFrg==$x8iV0TiDbEXndl0Fg8V3Rw91j5f5nztWK1zu7eQa0EE="
                 }
+                // ,
+                // Login = new Login
+                // {
+                //     LoginID = "01234567",
+                //     CustomerID = 2200,
+                //     PasswordHash = "Rfc2898DeriveBytes$50000$MrW2CQoJvjPMlynGLkGFrg==$x8iV0TiDbEXndl0Fg8V3Rw91j5f5nztWK1zu7eQa0EE="
+                // }
             }
         };
     }

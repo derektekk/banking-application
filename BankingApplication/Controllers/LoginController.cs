@@ -25,14 +25,14 @@ public class LoginController : Controller
     public IActionResult Login(string loginID, string password)
     {
         // get customer from loginID
-        var login = _context.Logins.Include(x => x.Customer).FirstOrDefault(y => y.LoginID == loginID);
+        var login = _context.Customers.FirstOrDefault(y => y.LoginID == loginID);
 
         // Check if the login details are valid
         if(login == null || string.IsNullOrEmpty(password) || !s_simpleHash.Verify(password, login.PasswordHash))
         {
             // display login page again and show error message
             ModelState.AddModelError("LoginFailed", "Login failed, please try again.");
-            return View(new Login { LoginID = loginID });
+            return View(new Customer { LoginID = loginID });
         }
 
         // Get customer if login details are valid
@@ -48,7 +48,7 @@ public class LoginController : Controller
   
 
         HttpContext.Session.SetInt32(nameof(Customer.CustomerID), login.CustomerID);
-        HttpContext.Session.SetString(nameof(Customer.FirstName), login.Customer.FirstName);
+        HttpContext.Session.SetString(nameof(Customer.FirstName), login.FirstName);
 
         return RedirectToAction("Index", "Customer");
     }

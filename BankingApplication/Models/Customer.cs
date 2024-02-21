@@ -20,6 +20,14 @@ namespace BankingApplication.Models;
         [StringLength(50, ErrorMessage ="Length exceeded 50 characters")]
         public string LastName { get; set; }
 
+        [StringLength(8)]
+        [RegularExpression("^[0-9]{8}$", ErrorMessage = "LoginID must be 8 digits.")]
+        public string LoginID { get; set; }
+
+        [Required]
+        [StringLength(94)]
+        public string PasswordHash { get; set; }
+
         // [StringLength(11, ErrorMessage = "TFN must be of the format: XXX XXX XXX")]
         // [RegularExpression("^[0-9]{3} [0-9]{3} [0-9]{3}$", ErrorMessage = "TFN must be of the format: XXX XXX XXX.")]
         // public string TFN { get; set; }
@@ -47,8 +55,8 @@ namespace BankingApplication.Models;
 
         public List<Account> Accounts { get; set; }
 
-        [NotMapped]
-        public Login Login { get; set; }
+        // [NotMapped]
+        // public Login Login { get; set; }
 
     }
 

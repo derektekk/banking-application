@@ -22,7 +22,7 @@ public class SignUpController : Controller
     [HttpPost]
     public IActionResult SignUp(string loginID, string password, string confirmPassword)
     {
-        var login = _context.Logins.Include(x => x.Customer).FirstOrDefault(y => y.LoginID == loginID);
+        var login = _context.Customers.FirstOrDefault(y => y.LoginID == loginID);
         if(login != null && password != null && confirmPassword != null){
             ModelState.AddModelError("SignUpFailed", "User already exists.");
             // return View(new Login { LoginID = loginID });
@@ -43,7 +43,7 @@ public class SignUpController : Controller
             return RedirectToAction("Index", "Home");
         }
 
-        return View(new Login { LoginID = loginID});
+        return View(new Customer { LoginID = loginID});
         
 
     }
