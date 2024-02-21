@@ -53,13 +53,4 @@ public class LoginController : Controller
         return RedirectToAction("Index", "Customer");
     }
 
-    // Action to handle logout
-    [Route("LogoutNow")]
-    public IActionResult Logout()
-    {
-        // clear session
-        HttpContext.Session.Clear();
-        // redirect to login view
-        return RedirectToAction("Login");
-    }
 }
