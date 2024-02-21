@@ -38,19 +38,28 @@ public class LoginController : Controller
         // Get customer if login details are valid
         var customer = _context.Customers.Find(login.CustomerID);
 
-        // Check if the account is locked
-        if(customer.Islocked)
-        {
-            // display login page again and show error message
-            ModelState.AddModelError("LoginFailed", "Account locked by Admin");
-            return View(new Login { LoginID = loginID });
-        }
+        // // Check if the account is locked
+        // if(customer.Islocked)
+        // {
+        //     // display login page again and show error message
+        //     ModelState.AddModelError("LoginFailed", "Account locked by Admin");
+        //     return View(new Login { LoginID = loginID });
+        // }
   
 
         HttpContext.Session.SetInt32(nameof(Customer.CustomerID), login.CustomerID);
-        HttpContext.Session.SetString(nameof(Customer.Name), login.Customer.Name);
+        HttpContext.Session.SetString(nameof(Customer.FirstName), login.Customer.FirstName);
 
         return RedirectToAction("Index", "Customer");
     }
 
+    // Action to handle logout
+    [Route("LogoutNow")]
+    public IActionResult Logout()
+    {
+        // clear session
+        HttpContext.Session.Clear();
+        // redirect to login view
+        return RedirectToAction("Login");
+    }
 }

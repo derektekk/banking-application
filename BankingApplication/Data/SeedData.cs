@@ -21,11 +21,11 @@ public static class SeedData
                 new Customer
                 {
                     CustomerID = customer.CustomerID,
-                    Name = customer.Name,
-                    Address = customer.Address,
-                    City = customer.City,
-                    Postcode = customer.Postcode,
-                    Islocked = false
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    // Address = customer.Address,
+                    // City = customer.City,
+                    // Postcode = customer.Postcode,
                 }
             );
             // insert accounts in DB
@@ -94,11 +94,11 @@ public static class SeedData
             new Customer
             {
                 CustomerID = 2100,
-                Name = "Derek Tek",
-                Address = "123 Fake Street",
-                City = "Melbourne",
-                Postcode = "3000",
-                Islocked = false,
+                FirstName = "Derek",
+                LastName = "Tek",
+                // Address = "123 Fake Street",
+                // City = "Melbourne",
+                // Postcode = "3000",
                 Accounts = new List<Account>
                 {
                     new Account
@@ -151,11 +151,11 @@ public static class SeedData
             new Customer
             {
                 CustomerID = 2200,
-                Name = "Guest",
-                Address = "23 Random Street",
-                City = "Melbourne",
-                Postcode = "3000",
-                Islocked = false,
+                FirstName = "Guest",
+                LastName = "User",
+                // Address = "23 Random Street",
+                // City = "Melbourne",
+                // Postcode = "3000",
                 Accounts = new List<Account>
                 {
                     new Account

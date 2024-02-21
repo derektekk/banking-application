@@ -22,7 +22,30 @@ public class SignUpController : Controller
     [HttpPost]
     public IActionResult SignUp(string loginID, string password, string confirmPassword)
     {
-        return RedirectToAction("Index", "Home");
+        var login = _context.Logins.Include(x => x.Customer).FirstOrDefault(y => y.LoginID == loginID);
+        if(login != null && password != null && confirmPassword != null){
+            ModelState.AddModelError("SignUpFailed", "User already exists.");
+            // return View(new Login { LoginID = loginID });
+            if(password != confirmPassword){
+                ModelState.AddModelError("MatchPassword", "Password does not match.");
+                // return View(new Login { LoginID = loginID });
+            }
+        }
+
+
+        // if(password != confirmPassword){
+        //     ModelState.AddModelError("MatchPassword", "Password does not match.");
+        //     return View(new Login { LoginID = loginID });
+        // }
+
+        if(login == null && (password == confirmPassword))
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
+        return View(new Login { LoginID = loginID});
+        
+
     }
 
 }
